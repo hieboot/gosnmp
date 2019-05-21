@@ -129,6 +129,7 @@ func (x *GoSNMP) sendOneRequest(packetOut *SnmpPacket,
 
 	timeout := x.Timeout
 	for retries := 0; ; retries++ {
+		time.Sleep(100 * time.Millisecond)
 		if retries > 0 {
 			x.logPrintf("Retry number %d. Last error was: %v", retries, err)
 			if x.ExponentialTimeout {
