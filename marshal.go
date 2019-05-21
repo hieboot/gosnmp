@@ -141,6 +141,7 @@ func (x *GoSNMP) sendOneRequest(packetOut *SnmpPacket,
 				}
 				break
 			}
+			time.Sleep(100 * time.Millisecond)
 		}
 		err = nil
 
